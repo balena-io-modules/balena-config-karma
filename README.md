@@ -32,7 +32,7 @@ To get started, create a `karma.conf.js` in the root of your project:
 
 ```js
 var karmaConfig = require('resin-config-karma');
-car packageJSON = require('./package.json');
+var packageJSON = require('./package.json');
 
 module.exports = function(config) {
 
