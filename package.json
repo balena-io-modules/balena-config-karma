@@ -1,0 +1,32 @@
+{
+  "name": "resin-config-karma",
+  "version": "1.0.0",
+  "main": "karma.js",
+  "description": "Base Resin.io Karma Test Runner configuration",
+  "homepage": "https://github.com/resin-io/resin-config-karma",
+  "scripts": {
+    "prepublish": "npm run-script lint",
+    "lint": "jshint --config .jshintrc --reporter unix *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:resin-io/resin-config-karma.git"
+  },
+  "author": "Juan Cruz Viotti <juan@resin.io>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "jshint": "^2.9.1"
+  },
+  "dependencies": {
+    "browserify": "^13.0.0",
+    "coffeeify": "^2.0.1",
+    "karma": "^0.13.19",
+    "karma-browserify": "^5.0.1",
+    "karma-mocha": "^0.2.1",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sauce-launcher": "^0.3.0",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.3",
+    "watchify": "^3.7.0"
+  }
+}
