@@ -3,11 +3,6 @@
     "base": "SauceLabs",
     "browserName": "chrome"
   },
-  "SL_ChromeDev": {
-    "base": "SauceLabs",
-    "browserName": "chrome",
-    "version": "dev"
-  },
   "SL_IE10": {
     "base": "SauceLabs",
     "browserName": "internet explorer",
