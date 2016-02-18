@@ -1,6 +1,6 @@
 {
   "name": "resin-config-karma",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "karma.js",
   "description": "Base Resin.io Karma Test Runner configuration",
   "homepage": "https://github.com/resin-io/resin-config-karma",
