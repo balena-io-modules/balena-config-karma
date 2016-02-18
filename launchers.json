@@ -25,11 +25,6 @@
     "base": "SauceLabs",
     "browserName": "firefox"
   },
-  "SL_FireFoxDev": {
-    "base": "SauceLabs",
-    "browserName": "firefox",
-    "version": "dev"
-  },
   "SL_Safari7": {
     "base": "SauceLabs",
     "browserName": "safari",
