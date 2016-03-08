@@ -27,7 +27,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Downgrade Browserify to v12.0.0 to avoid a `peerDependency` error in NodeJS v0.10.
 
-[1.0.4]: https://github.com/resin-io/resin-config-karma/compare/v1.0.3...v1.0.4
-[1.0.3]: https://github.com/resin-io/resin-config-karma/compare/v1.0.2...v1.0.3
-[1.0.2]: https://github.com/resin-io/resin-config-karma/compare/v1.0.1...v1.0.2
-[1.0.1]: https://github.com/resin-io/resin-config-karma/compare/v1.0.0...v1.0.1
+[1.0.4]: https://github.com/resin-io-modules/resin-config-karma/compare/v1.0.3...v1.0.4
+[1.0.3]: https://github.com/resin-io-modules/resin-config-karma/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/resin-io-modules/resin-config-karma/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/resin-io-modules/resin-config-karma/compare/v1.0.0...v1.0.1

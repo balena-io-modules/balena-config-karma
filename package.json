@@ -3,14 +3,14 @@
   "version": "1.0.4",
   "main": "karma.js",
   "description": "Base Resin.io Karma Test Runner configuration",
-  "homepage": "https://github.com/resin-io/resin-config-karma",
+  "homepage": "https://github.com/resin-io-modules/resin-config-karma",
   "scripts": {
     "prepublish": "npm run-script lint",
     "lint": "jshint --config .jshintrc --reporter unix *.js"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:resin-io/resin-config-karma.git"
+    "url": "git@github.com:resin-io-modules/resin-config-karma.git"
   },
   "author": "Juan Cruz Viotti <juan@resin.io>",
   "license": "Apache-2.0",
