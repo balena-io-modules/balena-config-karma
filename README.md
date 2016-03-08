@@ -64,9 +64,9 @@ If `SAUCE_LABS` is not set, `karma` will only run the tests locally on PhantomJS
 Browsers
 --------
 
-The tests run in the browsers specified in [launchers.json](https://github.com/resin-io/resin-config-karma/blob/master/launchers.json).
+The tests run in the browsers specified in [launchers.json](https://github.com/resin-io-modules/resin-config-karma/blob/master/launchers.json).
 
 Support
 -------
 
-If you're having any problem, please [raise an issue](https://github.com/resin-io/resin-config-karma/issues/new) on GitHub and the Resin.io team will be happy to help.
+If you're having any problem, please [raise an issue](https://github.com/resin-io-modules/resin-config-karma/issues/new) on GitHub and the Resin.io team will be happy to help.
