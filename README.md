@@ -4,7 +4,7 @@ resin-config-karma
 > Base Resin.io Karma Test Runner configuration
 
 [![npm version](https://badge.fury.io/js/resin-config-karma.svg)](http://badge.fury.io/js/resin-config-karma)
-[![dependencies](https://david-dm.org/resin-io/resin-config-karma.svg)](https://david-dm.org/resin-io/resin-config-karma.svg)
+[![dependencies](https://david-dm.org/resin-io-modules/resin-config-karma.svg)](https://david-dm.org/resin-io-modules/resin-config-karma.svg)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/resin-io/chat)
 
 Installation
