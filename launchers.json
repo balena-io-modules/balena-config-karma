@@ -1,65 +1,65 @@
 {
-  "SL_Chrome": {
+
+  "SL_Chrome_Linux": {
     "base": "SauceLabs",
+    "platform": "Linux",
     "browserName": "chrome"
   },
-  "SL_IE10": {
+  "SL_Chrome_Win10": {
     "base": "SauceLabs",
-    "browserName": "internet explorer",
-    "platform": "Windows 2012",
-    "version": "10"
+    "platform": "Windows 10",
+    "browserName": "chrome"
   },
+  "SL_Chrome_macOS": {
+    "base": "SauceLabs",
+    "platform": "OS X 10.11",
+    "browserName": "chrome"
+  },
+
   "SL_IE11": {
     "base": "SauceLabs",
     "browserName": "internet explorer",
     "platform": "Windows 8.1",
     "version": "11"
   },
+
   "SL_Edge": {
     "base": "SauceLabs",
     "browserName": "microsoftedge",
     "platform": "Windows 10",
-    "version": "20.10240"
+    "version": "latest"
   },
+
   "SL_FireFox": {
     "base": "SauceLabs",
-    "browserName": "firefox"
+    "browserName": "firefox",
+    "version": "latest"
   },
-  "SL_Safari7": {
-    "base": "SauceLabs",
-    "browserName": "safari",
-    "platform": "OS X 10.9",
-    "version": "7"
-  },
-  "SL_Safari8": {
+
+  "SL_Safari": {
     "base": "SauceLabs",
     "browserName": "safari",
     "platform": "OS X 10.10",
-    "version": "8"
+    "version": "latest"
   },
-  "SL_Safari9": {
+
+  "SL_opera": {
     "base": "SauceLabs",
-    "browserName": "safari",
-    "platform": "OS X 10.11",
-    "version": "9.0"
+    "browserName": "opera",
+    "version": "latest"
   },
-  "SL_Android4.1": {
-    "base": "SauceLabs",
-    "browserName": "android",
-    "platform": "Linux",
-    "version": "4.1"
-  },
-  "SL_Android4.2": {
+
+  "SL_Android6.0": {
     "base": "SauceLabs",
     "browserName": "android",
     "platform": "Linux",
-    "version": "4.2"
+    "version": "6.0"
   },
-  "SL_Android4.3": {
+  "SL_Android5.1": {
     "base": "SauceLabs",
     "browserName": "android",
     "platform": "Linux",
-    "version": "4.3"
+    "version": "5.1"
   },
   "SL_Android4.4": {
     "base": "SauceLabs",
@@ -67,29 +67,16 @@
     "platform": "Linux",
     "version": "4.4"
   },
-  "SL_Android5": {
-    "base": "SauceLabs",
-    "browserName": "android",
-    "platform": "Linux",
-    "version": "5.1"
-  },
-  "SL_iOS7": {
+
+  "SL_iOS10.3": {
     "base": "SauceLabs",
     "browserName": "iPhone",
-    "version": "7.1"
+    "version": "10.3"
   },
-  "SL_iOS8": {
+  "SL_iOS9.3": {
     "base": "SauceLabs",
     "browserName": "iPhone",
-    "version": "8.4"
-  },
-  "SL_iOS9": {
-    "base": "SauceLabs",
-    "browserName": "iPhone",
-    "version": "9.1"
-  },
-  "SL_opera": {
-    "base": "SauceLabs",
-    "browserName": "opera"
+    "version": "9.3"
   }
+
 }

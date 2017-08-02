@@ -1,6 +1,6 @@
 {
   "name": "resin-config-karma",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "main": "karma.js",
   "description": "Base Resin.io Karma Test Runner configuration",
   "homepage": "https://github.com/resin-io-modules/resin-config-karma",
@@ -18,15 +18,20 @@
     "jshint": "^2.9.1"
   },
   "dependencies": {
-    "browserify": "^12.0.0",
-    "coffeeify": "^2.0.1",
-    "karma": "^0.13.19",
-    "karma-browserify": "^5.0.1",
-    "karma-mocha": "^0.2.1",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "karma-sauce-launcher": "^0.3.0",
-    "mocha": "^2.4.5",
-    "phantomjs-prebuilt": "^2.1.3",
-    "watchify": "^3.7.0"
+    "awesome-typescript-loader": "^3.2.2",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.3",
+    "karma-sauce-launcher": "^1.1.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.4",
+    "mocha": "^3.4.0",
+    "webpack": "^3.3.0"
   }
 }
