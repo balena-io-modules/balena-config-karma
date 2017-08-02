@@ -43,7 +43,9 @@ var DEFAULT_WEBPACK_CONFIG = {
       exclude: function (modulePath) {
         var parts = modulePath.split(path.sep);
         var i = parts.indexOf('node_modules');
-        if (i < 0) return false;
+        if (i < 0) {
+          return false;
+        }
         return MODULES_TO_TRANSPILE.indexOf(parts[i + 1]) < 0;
       },
       loader: "babel-loader",

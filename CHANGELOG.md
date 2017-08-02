@@ -3,13 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [2.0.0]
+## [2.0.0] - 2017-08-02
 
 ### Breaking
 
 - Exports the factory function now instead of the singleton object
 - Switched to Chrome headless instead of PhantomJS
-- Switched to Webpack instead of Browserify
+- Switched to Webpack+Babel instead of Browserify
 - Dropped support for `CoffeeScript`
 - Assume the new structure (tests in JS or TS, built distribution files in JS, sources in JS/ES or TS).
 
