@@ -5,7 +5,8 @@
   "description": "Base Resin.io Karma Test Runner configuration",
   "homepage": "https://github.com/resin-io-modules/resin-config-karma",
   "scripts": {
-    "prepublish": "npm run-script lint",
+    "prepublish": "require-npm4-to-publish",
+    "prepublishOnly": "npm run-script lint",
     "lint": "jshint --config .jshintrc --reporter unix *.js"
   },
   "repository": {
@@ -15,7 +16,8 @@
   "author": "Juan Cruz Viotti <juan@resin.io>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "jshint": "^2.9.1"
+    "jshint": "^2.9.1",
+    "require-npm4-to-publish": "^1.0.0"
   },
   "dependencies": {
     "awesome-typescript-loader": "^3.2.2",
