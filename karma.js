@@ -126,7 +126,15 @@ module.exports = function configure(packageJSON, overrides) {
     port: 9876,
     colors: true,
     autoWatch: false,
-    browsers: [ 'ChromeHeadless' ],
+    browsers: ['ChromeHeadlessCustom'],
+    customLaunchers: {
+      ChromeHeadlessCustom: {
+        base: 'ChromeHeadless',
+        flags: [
+          '--no-sandbox'
+        ]
+      }
+    },
     singleRun: true,
     concurrency: Infinity,
 
