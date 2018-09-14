@@ -158,4 +158,5 @@ module.exports = function configure(packageJSON, overrides) {
   return config;
 };
 
+module.exports.DEFAULT_WEBPACK_CONFIG = DEFAULT_WEBPACK_CONFIG;
 module.exports.DEFAULT_SL_LAUNCHERS = DEFAULT_SL_LAUNCHERS;
