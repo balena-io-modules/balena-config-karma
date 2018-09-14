@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2.1.0 - 2017-11-13
 
+## v2.2.0 - 2018-09-14
+
+* Export DEFAULT_WEBPACK_CONFIG so that it can be extended [Pagan Gazzard]
+* Add coffeescript support [Pagan Gazzard]
+
 - Remove opera from the Sauce Labs Launcher (seems now unsupported)
 
 ## [2.0.0] - 2017-08-02
