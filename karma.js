@@ -25,7 +25,7 @@ var MODULES_TO_TRANSPILE = [ 'chai-as-promised' ];
 
 var DEFAULT_WEBPACK_CONFIG = {
   resolve: {
-    extensions: ['.ts', '.js', '.tsx', '.jsx']
+    extensions: ['.ts', '.js', '.tsx', '.jsx', '.coffee']
   },
   devtool: 'inline-source-map',
   module: {
@@ -37,6 +37,13 @@ var DEFAULT_WEBPACK_CONFIG = {
         useCache: true,
         cacheDirectory: '/tmp',
         useBabel: true
+      }
+    }, {
+      test: /\.coffee$/,
+      exclude: /node_modules/,
+      loader: "coffee-loader",
+      options: {
+        cacheDirectory: '/tmp'
       }
     }, {
       test: /\.js$/,
@@ -62,14 +69,17 @@ var DEFAULT_WEBPACK_CONFIG = {
 
 var TEST_FILES = [
   'tests/**/*.spec.js',
-  'tests/**/*.spec.ts'
+  'tests/**/*.spec.ts',
+  'tests/**/*.spec.coffee'
 ];
 
 var LIB_FILES = [
   'lib/**/*.ts',
   'lib/**/*.js',
+  'lib/**/*.coffee',
   'src/**/*.ts',
   'src/**/*.js',
+  'src/**/*.coffee',
   'build/**/*.js'
 ];
 
@@ -148,4 +158,5 @@ module.exports = function configure(packageJSON, overrides) {
   return config;
 };
 
+module.exports.DEFAULT_WEBPACK_CONFIG = DEFAULT_WEBPACK_CONFIG;
 module.exports.DEFAULT_SL_LAUNCHERS = DEFAULT_SL_LAUNCHERS;
