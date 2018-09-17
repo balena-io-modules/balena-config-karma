@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2.1.0 - 2017-11-13
 
+## v2.3.0 - 2018-09-17
+
+* Add headless Chrome parameters to work on ResinCi [Thodoris Greasidis]
+
 ## v2.2.0 - 2018-09-14
 
 * Export DEFAULT_WEBPACK_CONFIG so that it can be extended [Pagan Gazzard]
