@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2.1.0 - 2017-11-13
 
+## v2.3.1 - 2018-09-17
+
+* Update scripts for newer npm versions [Pagan Gazzard]
+
 ## v2.3.0 - 2018-09-17
 
 * Add headless Chrome parameters to work on ResinCi [Thodoris Greasidis]
