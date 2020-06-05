@@ -67,6 +67,11 @@ var DEFAULT_WEBPACK_CONFIG = {
           presets: [
             [
               '@babel/preset-env',
+              {
+                targets: {
+                  chrome: '60',
+                },
+              },
             ],
           ],
           cacheDirectory: '/tmp',
