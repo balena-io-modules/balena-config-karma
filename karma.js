@@ -17,54 +17,63 @@
 'use strict';
 
 var path = require('path');
-var CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
-
 var DEFAULT_SL_LAUNCHERS = require('./launchers.json');
 
 var MODULES_TO_TRANSPILE = [ 'chai-as-promised' ];
 
 var DEFAULT_WEBPACK_CONFIG = {
   resolve: {
-    extensions: ['.ts', '.js', '.tsx', '.jsx', '.coffee']
+    extensions: ['.ts', '.js', '.tsx', '.jsx', '.coffee'],
   },
+  mode: "development",
   devtool: 'inline-source-map',
   module: {
-    rules: [{
-      test: /\.tsx?$/,
-      exclude: /node_modules/,
-      loader: "awesome-typescript-loader",
-      options: {
-        useCache: true,
-        cacheDirectory: '/tmp',
-        useBabel: true
-      }
-    }, {
-      test: /\.coffee$/,
-      exclude: /node_modules/,
-      loader: "coffee-loader",
-      options: {
-        cacheDirectory: '/tmp'
-      }
-    }, {
-      test: /\.js$/,
-      exclude: function (modulePath) {
-        var parts = modulePath.split(path.sep);
-        var i = parts.indexOf('node_modules');
-        if (i < 0) {
-          return false;
-        }
-        return MODULES_TO_TRANSPILE.indexOf(parts[i + 1]) < 0;
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          { loader: 'babel-loader' },
+          {
+            loader: 'ts-loader',
+            options: {
+              // to make the builds faster
+              // types are probaly already checked in node
+              transpileOnly: true
+            },
+          },
+        ],
       },
-      loader: "babel-loader",
-      options: {
-        presets: [ "env", "es2015" ],
-        cacheDirectory: '/tmp'
+      {
+        test: /\.coffee$/,
+        exclude: /node_modules/,
+        loader: 'coffee-loader',
+        options: {
+          cacheDirectory: '/tmp',
+        },
+      },
+      {
+        test: /\.js$/,
+        exclude: function (modulePath) {
+          var parts = modulePath.split(path.sep);
+          var i = parts.indexOf('node_modules');
+          if (i < 0) {
+            return false;
+          }
+          return MODULES_TO_TRANSPILE.indexOf(parts[i + 1]) < 0;
+        },
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+            ],
+          ],
+          cacheDirectory: '/tmp',
+        },
       }
-    }]
+    ],
   },
-  plugins: [
-    new CheckerPlugin()
-  ]
 };
 
 var TEST_FILES = [
