@@ -1,26 +1,26 @@
-resin-config-karma
+balena-config-karma
 ==================
 
-> Base Resin.io Karma Test Runner configuration
+> Base balena Karma Test Runner configuration
 
-[![npm version](https://badge.fury.io/js/resin-config-karma.svg)](http://badge.fury.io/js/resin-config-karma)
-[![dependencies](https://david-dm.org/resin-io-modules/resin-config-karma.svg)](https://david-dm.org/resin-io-modules/resin-config-karma.svg)
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/resin-io/chat)
+[![npm version](https://badge.fury.io/js/balena-config-karma.svg)](http://badge.fury.io/js/balena-config-karma)
+[![dependencies](https://david-dm.org/balena-io-modules/balena-config-karma.svg)](https://david-dm.org/balena-io-modules/balena-config-karma.svg)
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/balena-io/chat)
 
 Installation
 ------------
 
-Install `resin-config-karma` by running:
+Install `balena-config-karma` by running:
 
 ```sh
-$ npm install --save-dev resin-config-karma
+$ npm install --save-dev balena-config-karma
 ```
 
 Setup
 -----
 
-This module aims to provide a base [Karma](https://karma-runner.github.io) configuration for Resin.io NPM modules.
-It's preconfigured with the following assumptions about the modern resin.io modules structure:
+This module aims to provide a base [Karma](https://karma-runner.github.io) configuration for balena NPM modules.
+It's preconfigured with the following assumptions about the modern balena.io modules structure:
 - The distribution files are located in the `build` folder (typically created by building the TS or ES6+ sources)
 and have the `.js` extension.
 - The sources are located in `src` or `lib` folder and are in JS (ES) or TS.
@@ -42,7 +42,7 @@ that you can pass to `config.set()` yourself.
 To get started, create a `karma.conf.js` in the root of your project:
 
 ```js
-var getKarmaConfig = require('resin-config-karma');
+var getKarmaConfig = require('balena-config-karma');
 var packageJSON = require('./package.json');
 
 module.exports = function(config) {
@@ -90,9 +90,9 @@ addons:
 
 AppVeyor has the the proper Chrome version preinstalled.
 
-The SauceLabs tests run in the browsers specified in [launchers.json](https://github.com/resin-io-modules/resin-config-karma/blob/master/launchers.json).
+The SauceLabs tests run in the browsers specified in [launchers.json](https://github.com/balena-io-modules/balena-config-karma/blob/master/launchers.json).
 
 Support
 -------
 
-If you're having any problem, please [raise an issue](https://github.com/resin-io-modules/resin-config-karma/issues/new) on GitHub and the Resin.io team will be happy to help.
+If you're having any problem, please [raise an issue](https://github.com/balena-io-modules/balena-config-karma/issues/new) on GitHub and the balena team will be happy to help.

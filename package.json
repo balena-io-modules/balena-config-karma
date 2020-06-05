@@ -1,9 +1,9 @@
 {
-  "name": "resin-config-karma",
+  "name": "balena-config-karma",
   "version": "2.3.1",
   "main": "karma.js",
-  "description": "Base Resin.io Karma Test Runner configuration",
-  "homepage": "https://github.com/resin-io-modules/resin-config-karma",
+  "description": "Base balena.io Karma Test Runner configuration",
+  "homepage": "https://github.com/balena-io-modules/balena-config-karma",
   "scripts": {
     "prepublish": "require-npm4-to-publish",
     "prepublishOnly": "npm run-script lint",
@@ -11,9 +11,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:resin-io-modules/resin-config-karma.git"
+    "url": "git@github.com:balena-io-modules/balena-config-karma.git"
   },
-  "author": "Juan Cruz Viotti <juan@resin.io>",
+  "author": "Juan Cruz Viotti <juan@balena.io>",
   "license": "Apache-2.0",
   "devDependencies": {
     "jshint": "^2.9.1",
