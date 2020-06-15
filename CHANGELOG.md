@@ -5,6 +5,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2.1.0 - 2017-11-13
 
+# v3.0.0
+## (2020-06-15)
+
+* Drop built-in configuration for SauceLabs [Thodoris Greasidis]
+* Set chrome 60 as the compatibility target [Thodoris Greasidis]
+* Upgrade babel, webpack  & move to ts-loader [Thodoris Greasidis]
+* Rename everything resin to balena [Thodoris Greasidis]
+
 ## v2.3.1 - 2018-09-17
 
 * Update scripts for newer npm versions [Pagan Gazzard]

@@ -1,6 +1,6 @@
 {
   "name": "balena-config-karma",
-  "version": "2.3.1",
+  "version": "3.0.0",
   "main": "karma.js",
   "description": "Base balena.io Karma Test Runner configuration",
   "homepage": "https://github.com/balena-io-modules/balena-config-karma",
