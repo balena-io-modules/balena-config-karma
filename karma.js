@@ -17,7 +17,6 @@
 'use strict';
 
 var path = require('path');
-var DEFAULT_SL_LAUNCHERS = require('./launchers.json');
 
 var MODULES_TO_TRANSPILE = [ 'chai-as-promised' ];
 
@@ -112,7 +111,6 @@ module.exports = function configure(packageJSON, overrides) {
       require('karma-mocha'),
       require('karma-mocha-reporter'),
       require('karma-chrome-launcher'),
-      require('karma-sauce-launcher'),
       require('karma-webpack'),
       require('karma-sourcemap-loader')
     ],
@@ -130,10 +128,6 @@ module.exports = function configure(packageJSON, overrides) {
 
     client: {
       captureConsole: true
-    },
-
-    sauceLabs: {
-      testName: `${packageJSON.name} v${packageJSON.version}`
     },
 
     reporters: [ 'mocha' ],
@@ -158,27 +152,7 @@ module.exports = function configure(packageJSON, overrides) {
     browserNoActivityTimeout: 300000
   };
 
-  if (process.env.SAUCE_LABS) {
-    console.info('Running in SauceLabs');
-
-    if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
-      console.error('Missing SAUCE_USERNAME or SAUCE_ACCESS_KEY env vars');
-      process.exit(1);
-    }
-
-    // Browsers to run on Sauce Labs
-    // https://wiki.saucelabs.com/display/DOCS/Test+Configuration+Options#TestConfigurationOptions-Selenium-SpecificOptions
-    config.customLaunchers = overrides.slLaunchers || DEFAULT_SL_LAUNCHERS;
-    config.browsers = config.browsers.concat(Object.keys(config.customLaunchers));
-
-    config.reporters = config.reporters.concat([ 'saucelabs' ]);
-
-    // Avoid choking SauceLabs when running many tests at once
-    config.concurrency = 1;
-  }
-
   return config;
 };
 
 module.exports.DEFAULT_WEBPACK_CONFIG = DEFAULT_WEBPACK_CONFIG;
-module.exports.DEFAULT_SL_LAUNCHERS = DEFAULT_SL_LAUNCHERS;

@@ -32,7 +32,6 @@ It has the benefit of importing TS if the `types` entry is properly configured i
 It supports the following features:
 - Webpack transform for the tests bundle with ES2015 support and sourcemaps.
 - Test are run in headless Chrome.
-- SauceLabs configuration.
 - Mocha support.
 - CI mode enabled by default.
 
@@ -46,7 +45,7 @@ var getKarmaConfig = require('balena-config-karma');
 var packageJSON = require('./package.json');
 
 module.exports = function(config) {
-  var karmaConfig = getKarmaConfig(packageJSON /*, { wepbackConfig: optionalCustomWebpackConfig, slLaunchers: optionalCustomSauceLabsLaunchers }*/)
+  var karmaConfig = getKarmaConfig(packageJSON /*, { wepbackConfig: optionalCustomWebpackConfig }*/)
 
   // Notice you can override the default options as you wish
   karmaConfig.logLevel = config.LOG_INFO;
@@ -56,19 +55,6 @@ module.exports = function(config) {
 ```
 
 And run `karma start`.
-
-SauceLabs
----------
-
-This configuration allows to easily setup your tests to run in SauceLabs by setting the following environment variables:
-
-```sh
-export SAUCE_LABS=true
-export SAUCE_USERNAME=<username>
-export SAUCE_ACCESS_KEY=<access key>
-```
-
-If `SAUCE_LABS` is not set, `karma` will only run the tests locally on Chrome.
 
 Browsers
 --------
@@ -89,8 +75,6 @@ addons:
 *Note:* change `false` to `required` if you need sudo for your tests, see [the Travis Trusty docs](https://docs.travis-ci.com/user/reference/trusty/#Using-Trusty) and [the Travis container-based infrastructure docs](https://docs.travis-ci.com/user/migrating-from-legacy) for more details.
 
 AppVeyor has the the proper Chrome version preinstalled.
-
-The SauceLabs tests run in the browsers specified in [launchers.json](https://github.com/balena-io-modules/balena-config-karma/blob/master/launchers.json).
 
 Support
 -------
