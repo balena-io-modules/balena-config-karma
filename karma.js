@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-17 Resin.io
+ * Copyright 2016-20 Balena Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,54 +17,67 @@
 'use strict';
 
 var path = require('path');
-var CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
-
-var DEFAULT_SL_LAUNCHERS = require('./launchers.json');
 
 var MODULES_TO_TRANSPILE = [ 'chai-as-promised' ];
 
 var DEFAULT_WEBPACK_CONFIG = {
   resolve: {
-    extensions: ['.ts', '.js', '.tsx', '.jsx', '.coffee']
+    extensions: ['.ts', '.js', '.tsx', '.jsx', '.coffee'],
   },
+  mode: "development",
   devtool: 'inline-source-map',
   module: {
-    rules: [{
-      test: /\.tsx?$/,
-      exclude: /node_modules/,
-      loader: "awesome-typescript-loader",
-      options: {
-        useCache: true,
-        cacheDirectory: '/tmp',
-        useBabel: true
-      }
-    }, {
-      test: /\.coffee$/,
-      exclude: /node_modules/,
-      loader: "coffee-loader",
-      options: {
-        cacheDirectory: '/tmp'
-      }
-    }, {
-      test: /\.js$/,
-      exclude: function (modulePath) {
-        var parts = modulePath.split(path.sep);
-        var i = parts.indexOf('node_modules');
-        if (i < 0) {
-          return false;
-        }
-        return MODULES_TO_TRANSPILE.indexOf(parts[i + 1]) < 0;
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          { loader: 'babel-loader' },
+          {
+            loader: 'ts-loader',
+            options: {
+              // to make the builds faster
+              // types are probaly already checked in node
+              transpileOnly: true
+            },
+          },
+        ],
       },
-      loader: "babel-loader",
-      options: {
-        presets: [ "env", "es2015" ],
-        cacheDirectory: '/tmp'
+      {
+        test: /\.coffee$/,
+        exclude: /node_modules/,
+        loader: 'coffee-loader',
+        options: {
+          cacheDirectory: '/tmp',
+        },
+      },
+      {
+        test: /\.js$/,
+        exclude: function (modulePath) {
+          var parts = modulePath.split(path.sep);
+          var i = parts.indexOf('node_modules');
+          if (i < 0) {
+            return false;
+          }
+          return MODULES_TO_TRANSPILE.indexOf(parts[i + 1]) < 0;
+        },
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: {
+                  chrome: '60',
+                },
+              },
+            ],
+          ],
+          cacheDirectory: '/tmp',
+        },
       }
-    }]
+    ],
   },
-  plugins: [
-    new CheckerPlugin()
-  ]
 };
 
 var TEST_FILES = [
@@ -98,7 +111,6 @@ module.exports = function configure(packageJSON, overrides) {
       require('karma-mocha'),
       require('karma-mocha-reporter'),
       require('karma-chrome-launcher'),
-      require('karma-sauce-launcher'),
       require('karma-webpack'),
       require('karma-sourcemap-loader')
     ],
@@ -116,10 +128,6 @@ module.exports = function configure(packageJSON, overrides) {
 
     client: {
       captureConsole: true
-    },
-
-    sauceLabs: {
-      testName: `${packageJSON.name} v${packageJSON.version}`
     },
 
     reporters: [ 'mocha' ],
@@ -144,27 +152,7 @@ module.exports = function configure(packageJSON, overrides) {
     browserNoActivityTimeout: 300000
   };
 
-  if (process.env.SAUCE_LABS) {
-    console.info('Running in SauceLabs');
-
-    if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
-      console.error('Missing SAUCE_USERNAME or SAUCE_ACCESS_KEY env vars');
-      process.exit(1);
-    }
-
-    // Browsers to run on Sauce Labs
-    // https://wiki.saucelabs.com/display/DOCS/Test+Configuration+Options#TestConfigurationOptions-Selenium-SpecificOptions
-    config.customLaunchers = overrides.slLaunchers || DEFAULT_SL_LAUNCHERS;
-    config.browsers = config.browsers.concat(Object.keys(config.customLaunchers));
-
-    config.reporters = config.reporters.concat([ 'saucelabs' ]);
-
-    // Avoid choking SauceLabs when running many tests at once
-    config.concurrency = 1;
-  }
-
   return config;
 };
 
 module.exports.DEFAULT_WEBPACK_CONFIG = DEFAULT_WEBPACK_CONFIG;
-module.exports.DEFAULT_SL_LAUNCHERS = DEFAULT_SL_LAUNCHERS;
