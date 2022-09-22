@@ -17,12 +17,18 @@
 'use strict';
 
 var path = require('path');
+var webpack = require('webpack');
 
 var MODULES_TO_TRANSPILE = [ 'chai-as-promised' ];
 
 var DEFAULT_WEBPACK_CONFIG = {
   resolve: {
     extensions: ['.ts', '.js', '.tsx', '.jsx', '.coffee'],
+    // Polyfills or mocks for various node stuff
+    fallback: {
+      stream: require.resolve('stream-browserify'),
+      zlib: require.resolve('browserify-zlib'),
+    },
   },
   mode: "development",
   devtool: 'inline-source-map',
@@ -77,6 +83,20 @@ var DEFAULT_WEBPACK_CONFIG = {
         },
       }
     ],
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      // Polyfills or mocks for various node stuff
+      process: 'process/browser',
+      Buffer: ['buffer', 'Buffer'],
+    }),
+  ],
+  output: {
+    // Required b/c node18 no longer supports webpack's default openssl provider and errors with:
+    // [karma-server]: UncaughtException:: error:0308010C:digital envelope routines::unsupported
+    // Webpack 6 will probably change the default.
+    // See: https://github.com/webpack/webpack/issues/14532#issuecomment-947525539
+    hashFunction: 'xxhash64'
   },
 };
 
