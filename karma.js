@@ -163,4 +163,3 @@ module.exports = function configure(packageJSON, overrides) {
   return config;
 };
 
-module.exports.DEFAULT_WEBPACK_CONFIG = DEFAULT_WEBPACK_CONFIG;
