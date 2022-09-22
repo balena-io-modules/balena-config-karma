@@ -111,8 +111,8 @@ var PREPROCESSORS = ALL_FILES.reduce(function(acc, file) {
   return acc;
 }, {});
 
-module.exports = function configure(packageJSON, overrides) {
-  overrides = overrides || {};
+module.exports = function configure(packageJSON, options) {
+  options = options || {};
 
   var config = {
     plugins: [
@@ -129,7 +129,7 @@ module.exports = function configure(packageJSON, overrides) {
     frameworks: [ 'mocha' ],
     files: [ 'node_modules/babel-polyfill/dist/polyfill.js' ].concat(TEST_FILES),
     preprocessors: PREPROCESSORS,
-    webpack: overrides.webpackConfig || DEFAULT_WEBPACK_CONFIG,
+    webpack: options.webpackConfig || DEFAULT_WEBPACK_CONFIG,
     webpackServer: {
       noInfo: true
     },
@@ -163,3 +163,5 @@ module.exports = function configure(packageJSON, overrides) {
   return config;
 };
 
+// So that consumers can use this packages webpack and don't have to install it to add webpack plugins.
+module.exports.webpack = webpack;
