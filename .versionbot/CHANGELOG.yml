@@ -1,0 +1,132 @@
+- commits:
+    - subject: Replace balenaCI with flowzone
+      hash: d37b03e01937f6696d4d69fea83c544a5a831bdf
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+  version: 3.0.1
+  title: ""
+  date: 2022-09-22T07:55:46.396Z
+- version: 3.0.0
+  date: 2020-06-15T12:38:51Z
+  commits:
+    - hash: 1fd3a77373e8327329f1a563e38a32a7a549eed1
+      author: Thodoris Greasidis
+      footers:
+        change-type: major
+      subject: Rename everything resin to balena
+      body: null
+    - hash: 63663ef794abfec73b4758754fa0ff5e6a06bb30
+      author: Thodoris Greasidis
+      footers:
+        change-type: major
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      subject: Upgrade babel, webpack  & move to ts-loader
+      body: null
+    - hash: c396fea2b4559d4132b5fb19ec947e2aa5e12166
+      author: Thodoris Greasidis
+      footers:
+        change-type: major
+      subject: Set chrome 60 as the compatibility target
+      body: |-
+        I was trying to set it to es2015 but I couldn't find a
+        way and babel-preset-2015 is deprecated.
+    - hash: 55bbd11aebda3f2192e2181587d8238151354fec
+      author: Thodoris Greasidis
+      footers:
+        change-type: major
+        see: https://www.flowdock.com/app/rulemotion/resin-frontend/threads/eibpHOmaw1E14F1rB36D4H96_1B?filter=search&query=es2015
+        signed-off-by: Thodoris Greasidis <thodoris@balena.io>
+      subject: Drop built-in configuration for SauceLabs
+      body: null
+- version: 2.3.1
+- date: 2018-09-17T15:12:50Z
+- commits:
+    - hash: 7c52d1704337fa71489a3bec7c4ed0c63bac58eb
+- commits:
+    - author: Pagan Gazzard
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Pagan Gazzard <page@resin.io>
+- commits:
+    - subject: Update scripts for newer npm versions
+- commits:
+    - ? body
+- version: 2.3.0
+- date: 2018-09-17T09:43:00Z
+- commits:
+    - hash: a0ce59fa06596036fbb459491bc669a8e5fab2d8
+- commits:
+    - author: Thodoris Greasidis
+- commits:
+    - footers:
+        change-type: minor
+- commits:
+    - footers:
+        see: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-on-alpine
+- commits:
+    - footers:
+        signed-off-by: Thodoris Greasidis <thodoris@resin.io>
+- commits:
+    - subject: Add headless Chrome parameters to work on ResinCi
+- commits:
+    - ? body
+- version: 2.2.0
+- date: 2018-09-14T12:34:57Z
+- commits:
+    - hash: 86e0015cdc57e9794352b5b6b3632118f607415f
+- commits:
+    - author: Pagan Gazzard
+- commits:
+    - footers:
+        change-type: minor
+- commits:
+    - footers:
+        signed-off-by: Pagan Gazzard <page@resin.io>
+- commits:
+    - subject: Add coffeescript support
+- commits:
+    - ? body
+- commits:
+    - hash: 523c982f88530ab70ba813ce26e9b1a53c678be6
+- commits:
+    - author: Pagan Gazzard
+- commits:
+    - footers:
+        change-type: minor
+- commits:
+    - footers:
+        signed-off-by: Pagan Gazzard <page@resin.io>
+- commits:
+    - subject: Export DEFAULT_WEBPACK_CONFIG so that it can be extended
+- commits:
+    - ? body
+- version: 2.1.0
+- date: 2017-11-13T09:04:26Z
+- commits:
+    - hash: 0ae35576ae9364c6bb1e3ad8268f7cc3126995dc
+- commits:
+    - author: Tim Perry
+- commits:
+    - subject: Remove opera from saucelabs browser list
+- commits:
+    - ? body
+- version: 2.0.0
+- date: 2017-08-02T13:02:35Z
+- commits:
+    - hash: 7f1006f061c5ccb3a8ddd9c3ca71d9c1b8b68a1c
+- commits:
+    - author: Eugene Mirotin
+- commits:
+    - footers:
+        change-type: major
+- commits:
+    - subject: webpack, chrome headless, ES/TS project structure
+- commits:
+    - ? body
