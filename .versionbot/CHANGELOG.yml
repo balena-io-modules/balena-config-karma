@@ -1,4 +1,32 @@
 - commits:
+    - subject: Re-export the webpack instance
+      hash: fb4e02e7f32a53a44ac36a2d41868007321fedff
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Thodoris Greasidis
+      nested: []
+    - subject: Stop exporting the DEFAULT_WEBPACK_CONFIG
+      hash: 69ac722cc84fb9c7e471e19bea3b634b8596b571
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Thodoris Greasidis
+      nested: []
+    - subject: Bump webpack to v5
+      hash: 2139b5b0431abf0b110c1f2a74f4125502b79ce8
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+      author: Thodoris Greasidis
+      nested: []
+  version: 4.0.0
+  title: ""
+  date: 2022-09-22T09:35:49.630Z
+- commits:
     - subject: Replace balenaCI with flowzone
       hash: d37b03e01937f6696d4d69fea83c544a5a831bdf
       body: ""

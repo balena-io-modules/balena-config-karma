@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2.1.0 - 2017-11-13
 
+## 4.0.0 - 2022-09-22
+
+* Re-export the webpack instance [Thodoris Greasidis]
+* Stop exporting the DEFAULT_WEBPACK_CONFIG [Thodoris Greasidis]
+* Bump webpack to v5 [Thodoris Greasidis]
+
 ## 3.0.1 - 2022-09-22
 
 * Replace balenaCI with flowzone [Thodoris Greasidis]
