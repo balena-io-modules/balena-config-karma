@@ -17,6 +17,7 @@
 'use strict';
 
 var path = require('path');
+var webpack = require('webpack');
 
 var MODULES_TO_TRANSPILE = [ 'chai-as-promised' ];
 
@@ -78,6 +79,13 @@ var DEFAULT_WEBPACK_CONFIG = {
       }
     ],
   },
+  output: {
+    // Required b/c node18 no longer supports webpack's default openssl provider and errors with:
+    // [karma-server]: UncaughtException:: error:0308010C:digital envelope routines::unsupported
+    // Webpack 6 will probably change the default.
+    // See: https://github.com/webpack/webpack/issues/14532#issuecomment-947525539
+    hashFunction: 'xxhash64'
+  },
 };
 
 var TEST_FILES = [
@@ -103,8 +111,8 @@ var PREPROCESSORS = ALL_FILES.reduce(function(acc, file) {
   return acc;
 }, {});
 
-module.exports = function configure(packageJSON, overrides) {
-  overrides = overrides || {};
+module.exports = function configure(packageJSON, options) {
+  options = options || {};
 
   var config = {
     plugins: [
@@ -121,7 +129,7 @@ module.exports = function configure(packageJSON, overrides) {
     frameworks: [ 'mocha' ],
     files: [ 'node_modules/babel-polyfill/dist/polyfill.js' ].concat(TEST_FILES),
     preprocessors: PREPROCESSORS,
-    webpack: overrides.webpackConfig || DEFAULT_WEBPACK_CONFIG,
+    webpack: options.webpackConfig || DEFAULT_WEBPACK_CONFIG,
     webpackServer: {
       noInfo: true
     },
@@ -155,4 +163,5 @@ module.exports = function configure(packageJSON, overrides) {
   return config;
 };
 
-module.exports.DEFAULT_WEBPACK_CONFIG = DEFAULT_WEBPACK_CONFIG;
+// So that consumers can use this packages webpack and don't have to install it to add webpack plugins.
+module.exports.webpack = webpack;
