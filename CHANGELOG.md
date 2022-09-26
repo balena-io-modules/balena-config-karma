@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2.1.0 - 2017-11-13
 
+## 4.0.1 - 2022-09-26
+
+* Delete redundant .resinci.yml [Thodoris Greasidis]
+
 ## 4.0.0 - 2022-09-22
 
 * Re-export the webpack instance [Thodoris Greasidis]
