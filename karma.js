@@ -115,6 +115,7 @@ module.exports = function configure(packageJSON, options) {
   options = options || {};
 
   var config = {
+    basePath: '',
     plugins: [
       require('karma-mocha'),
       require('karma-mocha-reporter'),
@@ -125,7 +126,6 @@ module.exports = function configure(packageJSON, options) {
     mime: {
       'text/x-typescript': ['ts','tsx']
     },
-    basePath: '',
     frameworks: [ 'mocha' ],
     files: [ 'node_modules/babel-polyfill/dist/polyfill.js' ].concat(TEST_FILES),
     preprocessors: PREPROCESSORS,
