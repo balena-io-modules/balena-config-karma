@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update flowzone.yml
+      hash: 30b8ffe1291e7899506c2e194cbfa1936e118968
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Kyle Harding
+      nested: []
+  version: 4.0.2
+  title: ""
+  date: 2023-05-31T15:40:39.083Z
+- commits:
     - subject: Delete redundant .resinci.yml
       hash: a14ba9d01ffbc4ebec732c1140fcdf4e10a773b1
       body: ""
@@ -97,7 +109,7 @@
 - commits:
     - subject: Update scripts for newer npm versions
 - commits:
-    - ? body
+    - body: null
 - version: 2.3.0
 - date: 2018-09-17T09:43:00Z
 - commits:
@@ -116,7 +128,7 @@
 - commits:
     - subject: Add headless Chrome parameters to work on ResinCi
 - commits:
-    - ? body
+    - body: null
 - version: 2.2.0
 - date: 2018-09-14T12:34:57Z
 - commits:
@@ -132,7 +144,7 @@
 - commits:
     - subject: Add coffeescript support
 - commits:
-    - ? body
+    - body: null
 - commits:
     - hash: 523c982f88530ab70ba813ce26e9b1a53c678be6
 - commits:
@@ -146,7 +158,7 @@
 - commits:
     - subject: Export DEFAULT_WEBPACK_CONFIG so that it can be extended
 - commits:
-    - ? body
+    - body: null
 - version: 2.1.0
 - date: 2017-11-13T09:04:26Z
 - commits:
@@ -156,7 +168,7 @@
 - commits:
     - subject: Remove opera from saucelabs browser list
 - commits:
-    - ? body
+    - body: null
 - version: 2.0.0
 - date: 2017-08-02T13:02:35Z
 - commits:
@@ -169,4 +181,4 @@
 - commits:
     - subject: webpack, chrome headless, ES/TS project structure
 - commits:
-    - ? body
+    - body: null

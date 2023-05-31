@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2.1.0 - 2017-11-13
 
+## 4.0.2 - 2023-05-31
+
+* Update flowzone.yml [Kyle Harding]
+
 ## 4.0.1 - 2022-09-26
 
 * Delete redundant .resinci.yml [Thodoris Greasidis]
