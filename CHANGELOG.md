@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2.1.0 - 2017-11-13
 
+## 4.0.3 - 2026-02-19
+
+* Add id-token: write permission for NPM OIDC publishing [Kyle Harding]
+
 ## 4.0.2 - 2023-05-31
 
 * Update flowzone.yml [Kyle Harding]

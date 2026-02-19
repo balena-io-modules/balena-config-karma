@@ -1,4 +1,18 @@
 - commits:
+    - subject: "Add id-token: write permission for NPM OIDC publishing"
+      hash: 4e01caa63f697e981952b0e30d1339137bfd12e0
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 4.0.3
+  title: ""
+  date: 2026-02-19T02:03:00.791Z
+- commits:
     - subject: Update flowzone.yml
       hash: 30b8ffe1291e7899506c2e194cbfa1936e118968
       body: ""

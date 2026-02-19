@@ -1,6 +1,6 @@
 {
   "name": "balena-config-karma",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "main": "karma.js",
   "description": "Base balena.io Karma Test Runner configuration",
   "homepage": "https://github.com/balena-io-modules/balena-config-karma",
@@ -35,6 +35,6 @@
     "webpack-cli": "^4.10.0"
   },
   "versionist": {
-    "publishedAt": "2023-05-31T15:40:39.157Z"
+    "publishedAt": "2026-02-19T02:03:00.836Z"
   }
 }
